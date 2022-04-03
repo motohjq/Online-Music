@@ -1,0 +1,27 @@
+// 定义复用的css @mixin no-wrap(){}
+// 使用时 @include nowrap;
+
+// 背景图片
+@mixin bg-image($url) {
+  background-image: url($url + ".png");
+}
+
+// 禁止折行
+@mixin no-wrap() {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+// 扩展小图标按钮的点击区域
+@mixin extend-click() {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+  }
+}
